@@ -19,6 +19,10 @@ namespace vtortola.WebSockets
             HttpRequest = request;
             HttpResponse = response;
         }
+        public WebSocket()
+        {
+            // Needed for mocking
+        }
         public abstract WebSocketMessageReadStream ReadMessage();
         public abstract Task<WebSocketMessageReadStream> ReadMessageAsync(CancellationToken cancel);
         public abstract WebSocketMessageWriteStream CreateMessageWriter(WebSocketMessageType messageType);
